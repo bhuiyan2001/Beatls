@@ -1,0 +1,708 @@
+@import './mixins/mixins';
+@import './variable/variable';
+
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@200;300;400;500;600;700&display=swap');
+
+/*================================
+      common css start
+================================*/
+
+* {
+    margin: 0;
+    padding: 0;
+    outline: 0;
+}
+
+ul,
+ol {
+    list-style: none;
+}
+
+a {
+    text-decoration: none !important;
+    display: inline-block;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+ul,
+li,
+ol {
+    margin: 0 !important;
+    padding: 0 !important;
+}
+
+/*================================
+      common css end
+================================*/
+/*================================
+      header part start
+================================*/
+#header {
+    padding: 10px 0;
+    background: $hover;
+
+    .header_left {
+        p {
+            @include fstyle (#fff, 14px, 400);
+            font-family: $opnsan;
+        }
+    }
+
+    .header_right {
+
+        ul {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: end;
+
+            li {
+
+                a {
+                    i {
+                        color: #fff;
+                        margin-left: 20px;
+
+                        &:hover {
+                            color: #666;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+/*================================
+      header part end
+================================*/
+/*================================
+      menu part start
+================================*/
+#menu {
+    padding: 20px;
+
+    .menu_left {
+        width: 80px;
+    }
+
+    .main_menu {
+        ul {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: end;
+
+            li {
+                a {
+                    @include fstyle (#000, 14px, 500);
+                    font-family: $opnsan;
+                    margin-left: 20px;
+
+                    &:hover {
+                        color: $hover;
+                    }
+                }
+            }
+        }
+    }
+}
+
+/*================================
+      menu part end
+================================*/
+/*================================
+      banner part start
+================================*/
+#banner {
+    padding: 85px 0;
+    z-index: 1;
+
+    .banner_text {
+        text-align: right;
+
+        h4 {
+            @include fstyle (#fff, 30px, 400);
+            font-family: $osw;
+        }
+
+        h1 {
+            @include fstyle (#fff, 40px, 700);
+            font-family: $osw;
+        }
+
+        p {
+            @include fstyle (#fff, 13px, 400);
+            font-family: $opnsan;
+        }
+
+        a {
+            padding: 5px 15px;
+            @include fstyle (#fff, 14px, 400);
+            font-family: $opnsan;
+            border: 1px solid #fff;
+            margin-left: 20px;
+
+            &:hover {
+                background: $hover;
+                border-color: $hover;
+            }
+        }
+
+    }
+
+    position: relative;
+
+    &::after {
+        position: absolute;
+        content: '';
+        top: 0;
+        left: 0;
+        height: 100%;
+        width: 100%;
+        background: rgba(0, 0, 0, 0.618);
+        z-index: -1;
+    }
+}
+
+/*================================
+      banner part end
+================================*/
+/*================================
+      about part start
+================================*/
+#about {
+    padding: 60px 0;
+    text-align: center;
+
+    .common_head {
+        margin-bottom: 40px;
+        display: inline-block;
+
+        h4 {
+            @include fstyle (#000, 24px, 500);
+            font-family: $osw;
+        }
+
+        position: relative;
+
+        img {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+        }
+    }
+
+    .about_right {
+        >p {
+            @include fstyle (#000, 14px, 400);
+            font-family: $opnsan;
+            padding-top: 40px !important;
+
+            span {
+                display: block;
+                margin-top: 40px;
+            }
+        }
+    }
+}
+
+/*================================
+      about part end
+================================*/
+/*================================
+      service part start
+================================*/
+#service {
+    padding-bottom: 60px;
+    text-align: center;
+
+    .common_head {
+        margin-bottom: 65px;
+        display: inline-block;
+
+        h4 {
+            @include fstyle (#000, 24px, 500);
+            font-family: $osw;
+        }
+
+        position: relative;
+
+        img {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+        }
+    }
+
+    .servive_box {
+        padding: 50px 20px 20px;
+        background: #f1f1f1;
+
+        >h5 {
+            @include fstyle (#000, 16px, 500);
+            font-family: $osw;
+            margin-bottom: 10px;
+        }
+
+        p {
+            @include fstyle (#000, 13px, 400);
+            font-family: $opnsan;
+        }
+
+        position: relative;
+
+        .servicce_log {
+            width: 70px;
+            height: 70px;
+            text-align: center;
+            line-height: 70px;
+            border-radius: 50%;
+            -webkit-border-radius: 50%;
+            -moz-border-radius: 50%;
+            -ms-border-radius: 50%;
+            -o-border-radius: 50%;
+            background: #f1f1f1;
+            border: 4px solid #fff;
+            position: absolute;
+            top: -40px;
+            left: 50%;
+            transform: translateX(-50%);
+            -webkit-transform: translateX(-50%);
+            -moz-transform: translateX(-50%);
+            -ms-transform: translateX(-50%);
+            -o-transform: translateX(-50%);
+
+            &::after {
+                position: absolute;
+                content: '';
+                width: 74px;
+                height: 74px;
+                border: 2px solid #f1f1f1;
+                border-radius: 50%;
+                -webkit-border-radius: 50%;
+                -moz-border-radius: 50%;
+                -ms-border-radius: 50%;
+                -o-border-radius: 50%;
+                top: -6px;
+                left: -6px;
+            }
+
+            &::before {
+                position: absolute;
+                content: '';
+                width: 81px;
+                height: 81px;
+                border: 3px solid #fff;
+                border-radius: 50%;
+                -webkit-border-radius: 50%;
+                -moz-border-radius: 50%;
+                -ms-border-radius: 50%;
+                -o-border-radius: 50%;
+                top: -10px;
+                left: -10px;
+            }
+        }
+
+        &:hover {
+            box-shadow: 0px 0px 7px 0px #888888;
+
+            .servicce_log {
+                background: #5bc5f4;
+
+                &::after {
+                    border-color: #5bc5f4;
+                }
+            }
+        }
+    }
+}
+
+/*================================
+      service part end
+================================*/
+/*================================
+      portfolio part start
+================================*/
+#portfolio {
+    padding-bottom: 60px;
+    text-align: center;
+
+    .common_head {
+        margin-bottom: 65px;
+        display: inline-block;
+
+        h4 {
+            @include fstyle (#000, 24px, 500);
+            font-family: $osw;
+        }
+
+        position: relative;
+
+        img {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+        }
+    }
+
+    .port_item {
+        position: relative;
+        margin-bottom: 20px;
+
+        &:hover {
+            .overly {
+                display: block;
+            }
+        }
+
+        .overly {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.60);
+            display: none;
+
+            a {
+                i {
+                    width: 30px;
+                    height: 30px;
+                    text-align: center;
+                    line-height: 30px;
+                    background: #5bc5f4;
+                    color: #fff;
+                    border-radius: 50%;
+                    -webkit-border-radius: 50%;
+                    -moz-border-radius: 50%;
+                    -ms-border-radius: 50%;
+                    -o-border-radius: 50%;
+                    position: absolute;
+                    top: 50%;
+                    left: 50%;
+                    transform: translate(-50%, -50%);
+                    -webkit-transform: translate(-50%, -50%);
+                    -moz-transform: translate(-50%, -50%);
+                    -ms-transform: translate(-50%, -50%);
+                    -o-transform: translate(-50%, -50%);
+                }
+            }
+        }
+    }
+
+}
+
+/*================================
+      portfolio part end
+================================*/
+/*================================
+      team part start
+================================*/
+#team_part {
+    .common_head {
+        margin-bottom: 65px;
+        display: inline-block;
+
+        h4 {
+            @include fstyle (#000, 24px, 500);
+            font-family: $osw;
+        }
+
+        position: relative;
+
+        img {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+        }
+    }
+
+    .team_item {
+        .team_picture {
+            position: relative;
+
+            &:hover {
+                .overly {
+                    display: block;
+                }
+            }
+
+            .overly {
+                position: absolute;
+                top: 0;
+                right: 0;
+                width: 80px;
+                height: 100%;
+                background: rgba(0, 0, 0, 0.6);
+                display: none;
+
+                >ul {
+                    position: absolute;
+                    top: 50%;
+                    left: 50%;
+                    transform: translate(-50%, -50%);
+                    -webkit-transform: translate(-50%, -50%);
+                    -moz-transform: translate(-50%, -50%);
+                    -ms-transform: translate(-50%, -50%);
+                    -o-transform: translate(-50%, -50%);
+
+                    >li {
+                        a {
+                            i {
+                                width: 30px;
+                                height: 30px;
+                                border: 1px solid #fff;
+                                color: #fff;
+                                line-height: 30px;
+                                text-align: center;
+                                border-radius: 50%;
+                                -webkit-border-radius: 50%;
+                                -moz-border-radius: 50%;
+                                -ms-border-radius: 50%;
+                                -o-border-radius: 50%;
+                                margin-bottom: 10px;
+
+                                &:hover {
+                                    background: $hover;
+                                    border-color: $hover;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        .team_text {
+            margin-top: 10px;
+
+            h4 {
+                @include fstyle (#000, 16px, 500);
+                font-family: $osw;
+                cursor: pointer;
+
+                &:hover {
+                    color: #5bc5f4;
+                }
+            }
+
+            p {
+                @include fstyle (#000, 14px, 400);
+                font-family: $opnsan;
+
+            }
+        }
+    }
+}
+
+/*================================
+      team part end
+================================*/
+/*================================
+      testmonial part start
+================================*/
+#testimonial {
+    padding: 60px 0;
+
+    .testimonial_part {
+        .test_picture {
+            width: 80px;
+            margin: 0 auto;
+        }
+
+        .test_text {
+            margin-top: 35px;
+            background: #f1f1f1;
+            padding: 20px;
+
+            h4 {
+                @include fstyle (#000, 16px, 600);
+                font-family: $osw;
+            }
+
+            ul {
+                li {
+                    a {
+                        i {
+                            color: #5bc5f4;
+                        }
+                    }
+                }
+            }
+
+            p {
+                @include fstyle (#000, 14px, 400);
+                font-family: $opnsan;
+                margin-top: 10px !important;
+            }
+
+            position: relative;
+
+            .angel {
+                position: absolute;
+                top: -20px;
+                left: 50%;
+                width: 0;
+                height: 0;
+                border-left: 30px solid transparent;
+                border-right: 30px solid transparent;
+                border-bottom: 30px solid #f1f1f1;
+                transform: translateX(-50%);
+                -webkit-transform: translateX(-50%);
+                -moz-transform: translateX(-50%);
+                -ms-transform: translateX(-50%);
+                -o-transform: translateX(-50%);
+            }
+        }
+    }
+}
+
+/*================================
+      testmonial part end
+================================*/
+/*================================
+      footer part start
+================================*/
+#footer {
+    padding-top: 20px;
+    background: #353535;
+
+    .logo_part {
+        .logo {
+            width: 80px;
+        }
+
+        .logo_text {
+            margin-top: 40px;
+
+            p {
+                @include fstyle (#fff, 14px, 400);
+                font-family: $opnsan;
+
+                span {
+                    display: block;
+                    margin-top: 30px;
+                }
+            }
+        }
+    }
+
+    .contact_part {
+        .contact_head {
+            h4 {
+                @include fstyle (#fff, 16px, 600);
+                font-family: $osw;
+                margin: 20px 0 40px 0 !important;
+            }
+
+        }
+
+        ul {
+            margin-bottom: 20px !important;
+
+            li {
+                i {
+                    width: 30px;
+                    height: 30px;
+                    text-align: center;
+                    line-height: 30px;
+                    background: #5bc5f4;
+                    color: #fff;
+                    margin-right: 20px;
+                    border-radius: 50%;
+                    -webkit-border-radius: 50%;
+                    -moz-border-radius: 50%;
+                    -ms-border-radius: 50%;
+                    -o-border-radius: 50%;
+                    margin-top: 10px;
+                }
+
+                a {
+                    @include fstyle (#fff, 14px, 400);
+                    font-family: $opnsan;
+                    display: block;
+                }
+            }
+        }
+    }
+
+    .link_part {
+        .link_head {
+            h4 {
+                @include fstyle (#fff, 16px, 600);
+                font-family: $osw;
+                margin: 20px 0 40px 0 !important;
+            }
+        }
+
+        .link_list {
+            ul {
+                margin-right: 20px !important;
+
+                li {
+                    a {
+                        @include fstyle (#fff, 14px, 400);
+                        font-family: $opnsan;
+                        margin-bottom: 10px !important;
+
+                        &:hover {
+                            color: #5bc5f4;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    .photo_part {
+        h4 {
+            @include fstyle (#fff, 16px, 600);
+            font-family: $osw;
+            margin: 20px 0 40px 0 !important;
+        }
+
+        ul {
+            flex-wrap: wrap;
+
+            li {
+                margin-right: 10px !important;
+                margin-bottom: 10px !important;
+
+                &:nth-child(3) {
+                    margin-right: 0 !important;
+                }
+
+                &:nth-child(6) {
+                    margin-right: 0 !important;
+                }
+            }
+        }
+    }
+
+    .footer_end {
+        padding: 20px 0;
+        text-align: center;
+        background: #5555;
+
+        p {
+            @include fstyle (#fff, 14px, 400);
+            font-family: $opnsan;
+        }
+    }
+}
+
+/*================================
+      footer part end
+================================*/
+/*================================
+      menu part start
+================================*/
+/*================================
+      menu part end
+================================*/
